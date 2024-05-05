@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_e56fb91e74b2e89be72df50bf09e1584 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+        
+    
+                    <style>
+                        .foliumtooltip {
+                            
+                        }
+                       .foliumtooltip table{
+                            margin: auto;
+                        }
+                        .foliumtooltip tr{
+                            text-align: left;
+                        }
+                        .foliumtooltip th{
+                            padding: 2px; padding-right: 8px;
+                        }
+                    </style>
+            
+    
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script>$( function() {
+        $( ".maplegend" ).draggable({
+            start: function (event, ui) {
+                $(this).css({
+                    right: "auto",
+                    top: "auto",
+                    bottom: "auto"
+                });
+            }
+        });
+    });
+    </script>
+    <style type='text/css'>
+      .maplegend {
+        position: absolute;
+        z-index:9999;
+        background-color: rgba(255, 255, 255, .8);
+        border-radius: 5px;
+        box-shadow: 0 0 15px rgba(0,0,0,0.2);
+        padding: 10px;
+        font: 12px/14px Arial, Helvetica, sans-serif;
+        right: 10px;
+        bottom: 20px;
+      }
+      .maplegend .legend-title {
+        text-align: left;
+        margin-bottom: 5px;
+        font-weight: bold;
+        }
+      .maplegend .legend-scale ul {
+        margin: 0;
+        margin-bottom: 0px;
+        padding: 0;
+        float: left;
+        list-style: none;
+        }
+      .maplegend .legend-scale ul li {
+        list-style: none;
+        margin-left: 0;
+        line-height: 16px;
+        margin-bottom: 2px;
+        }
+      .maplegend ul.legend-labels li span {
+        display: block;
+        float: left;
+        height: 14px;
+        width: 14px;
+        margin-right: 5px;
+        margin-left: 0;
+        border: 0px solid #ccc;
+        }
+      .maplegend .legend-source {
+        color: #777;
+        clear: both;
+        }
+      .maplegend a {
+        color: #777;
+        }
+    </style>
+    
+</head>
+<body>
+    
+    
+    <div id='maplegend tellus:name' class='maplegend'>
+        <div class='legend-title'>tellus:name</div>
+        <div class='legend-scale'>
+            <ul class='legend-labels'>
+                <li><span style='background:#1f77b4'></span>ALAV2A277442870</li>
+                <li><span style='background:#d62728'></span>ALAV2A277442880</li>
+                <li><span style='background:#f7b6d2'></span>ALAV2A278172860</li>
+                <li><span style='background:#9edae5'></span>ALAV2A278172870</li>
+            </ul>
+        </div>
+    </div>
+    
+    
+            <div class="folium-map" id="map_e56fb91e74b2e89be72df50bf09e1584" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_e56fb91e74b2e89be72df50bf09e1584 = L.map(
+                "map_e56fb91e74b2e89be72df50bf09e1584",
+                {
+                    center: [36.026335599999996, 140.49618215],
+                    crs: L.CRS.EPSG3857,
+                    zoom: 10,
+                    zoomControl: true,
+                    preferCanvas: false,
+                }
+            );
+            L.control.scale().addTo(map_e56fb91e74b2e89be72df50bf09e1584);
+
+            
+
+        
+    
+            var tile_layer_b2f1ac3cc22b5f5e8cff1f0281be2ad9 = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {"attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors", "detectRetina": false, "maxNativeZoom": 19, "maxZoom": 19, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            );
+        
+    
+            tile_layer_b2f1ac3cc22b5f5e8cff1f0281be2ad9.addTo(map_e56fb91e74b2e89be72df50bf09e1584);
+        
+    
+            map_e56fb91e74b2e89be72df50bf09e1584.fitBounds(
+                [[35.194846, 139.7859573], [36.8578252, 141.206407]],
+                {}
+            );
+        
+    
+        function geo_json_9eb655e320ea73b7715cd11aa1c9d3b7_styler(feature) {
+            switch(feature.id) {
+                case "0": 
+                    return {"color": "#1f77b4", "fillColor": "#1f77b4", "fillOpacity": 0.5, "weight": 2};
+                case "1": 
+                    return {"color": "#d62728", "fillColor": "#d62728", "fillOpacity": 0.5, "weight": 2};
+                case "2": 
+                    return {"color": "#f7b6d2", "fillColor": "#f7b6d2", "fillOpacity": 0.5, "weight": 2};
+                default:
+                    return {"color": "#9edae5", "fillColor": "#9edae5", "fillOpacity": 0.5, "weight": 2};
+            }
+        }
+        function geo_json_9eb655e320ea73b7715cd11aa1c9d3b7_highlighter(feature) {
+            switch(feature.id) {
+                default:
+                    return {"fillOpacity": 0.75};
+            }
+        }
+        function geo_json_9eb655e320ea73b7715cd11aa1c9d3b7_pointToLayer(feature, latlng) {
+            var opts = {"bubblingMouseEvents": true, "color": "#3388ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#3388ff", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3};
+            
+            let style = geo_json_9eb655e320ea73b7715cd11aa1c9d3b7_styler(feature)
+            Object.assign(opts, style)
+            
+            return new L.CircleMarker(latlng, opts)
+        }
+
+        function geo_json_9eb655e320ea73b7715cd11aa1c9d3b7_onEachFeature(feature, layer) {
+            layer.on({
+                mouseout: function(e) {
+                    if(typeof e.target.setStyle === "function"){
+                            geo_json_9eb655e320ea73b7715cd11aa1c9d3b7.resetStyle(e.target);
+                    }
+                },
+                mouseover: function(e) {
+                    if(typeof e.target.setStyle === "function"){
+                        const highlightStyle = geo_json_9eb655e320ea73b7715cd11aa1c9d3b7_highlighter(e.target.feature)
+                        e.target.setStyle(highlightStyle);
+                    }
+                },
+            });
+        };
+        var geo_json_9eb655e320ea73b7715cd11aa1c9d3b7 = L.geoJson(null, {
+                onEachFeature: geo_json_9eb655e320ea73b7715cd11aa1c9d3b7_onEachFeature,
+            
+                style: geo_json_9eb655e320ea73b7715cd11aa1c9d3b7_styler,
+                pointToLayer: geo_json_9eb655e320ea73b7715cd11aa1c9d3b7_pointToLayer,
+        });
+
+        function geo_json_9eb655e320ea73b7715cd11aa1c9d3b7_add (data) {
+            geo_json_9eb655e320ea73b7715cd11aa1c9d3b7
+                .addData(data);
+        }
+            geo_json_9eb655e320ea73b7715cd11aa1c9d3b7_add({"bbox": [139.7859573, 35.194846, 141.206407, 36.8578252], "features": [{"bbox": [139.9240901, 35.6882876, 140.9089491, 36.5389288], "geometry": {"coordinates": [[[139.9240901, 35.8359832], [140.703506, 35.6882876], [140.9089491, 36.3899905], [140.1229063, 36.5389288], [139.9240901, 35.8359832]]], "type": "Polygon"}, "id": "0", "properties": {"__folium_color": "#1f77b4", "created": "2021-09-22T04:07:47.101506+00:00", "end_datetime": "2011-04-10T01:27:23.348878+00:00", "eo:cloud_cover": 25.5, "gsd": 10.0, "processing:level": "L1B1", "sat:orbit_state": "descending", "sat:relative_orbit": 67, "start_datetime": "2011-04-10T01:27:23.348878+00:00", "tellus:bands": ["band1", "band2", "band3", "band4"], "tellus:can_ordered": true, "tellus:name": "ALAV2A277442870", "tellus:pointing_angle": 0.0, "tellus:published_datetime": "2021-09-22T04:08:17.227940+00:00", "tellus:sat_frame": 2870, "updated": "2024-03-20T21:30:17.351431+00:00"}, "type": "Feature"}, {"bbox": [139.7859573, 35.194846, 140.763983, 36.0451457], "geometry": {"coordinates": [[[139.7859573, 35.3420538], [140.5605135, 35.194846], [140.763983, 35.8967382], [139.9829465, 36.0451457], [139.7859573, 35.3420538]]], "type": "Polygon"}, "id": "1", "properties": {"__folium_color": "#d62728", "created": "2021-09-22T04:07:24.121292+00:00", "end_datetime": "2011-04-10T01:27:31.565817+00:00", "eo:cloud_cover": 35.5, "gsd": 10.0, "processing:level": "L1B1", "sat:orbit_state": "descending", "sat:relative_orbit": 67, "start_datetime": "2011-04-10T01:27:31.565817+00:00", "tellus:bands": ["band1", "band2", "band3", "band4"], "tellus:can_ordered": true, "tellus:name": "ALAV2A277442880", "tellus:pointing_angle": 0.0, "tellus:published_datetime": "2021-09-22T04:07:58.855656+00:00", "tellus:sat_frame": 2880, "updated": "2024-03-20T21:31:24.563301+00:00"}, "type": "Feature"}, {"bbox": [140.1595756, 35.9893181, 141.206407, 36.8578252], "geometry": {"coordinates": [[[140.1595756, 36.1579472], [140.9839334, 35.9893181], [141.206407, 36.6877318], [140.37508, 36.8578252], [140.1595756, 36.1579472]]], "type": "Polygon"}, "id": "2", "properties": {"__folium_color": "#f7b6d2", "created": "2021-09-22T03:39:11.117252+00:00", "end_datetime": "2011-04-15T01:33:31.696811+00:00", "eo:cloud_cover": 1.0, "gsd": 10.0, "processing:level": "L1B1", "sat:orbit_state": "descending", "sat:relative_orbit": 70, "start_datetime": "2011-04-15T01:33:31.696811+00:00", "tellus:bands": ["band1", "band2", "band3", "band4"], "tellus:can_ordered": true, "tellus:name": "ALAV2A278172860", "tellus:pointing_angle": 12.5, "tellus:published_datetime": "2021-09-22T03:39:41.016135+00:00", "tellus:sat_frame": 2860, "updated": "2024-03-20T22:39:23.722635+00:00"}, "type": "Feature"}, {"bbox": [140.0094501, 35.497482, 141.0489244, 36.3654909], "geometry": {"coordinates": [[[140.0094501, 35.665396], [140.8288302, 35.497482], [141.0489244, 36.1961624], [140.2227235, 36.3654909], [140.0094501, 35.665396]]], "type": "Polygon"}, "id": "3", "properties": {"__folium_color": "#9edae5", "created": "2021-09-22T03:38:45.772337+00:00", "end_datetime": "2011-04-15T01:33:39.913645+00:00", "eo:cloud_cover": 1.0, "gsd": 10.0, "processing:level": "L1B1", "sat:orbit_state": "descending", "sat:relative_orbit": 70, "start_datetime": "2011-04-15T01:33:39.913645+00:00", "tellus:bands": ["band1", "band2", "band3", "band4"], "tellus:can_ordered": true, "tellus:name": "ALAV2A278172870", "tellus:pointing_angle": 12.5, "tellus:published_datetime": "2021-09-22T03:39:17.096934+00:00", "tellus:sat_frame": 2870, "updated": "2024-03-20T22:40:10.604237+00:00"}, "type": "Feature"}], "type": "FeatureCollection"});
+
+        
+    
+    geo_json_9eb655e320ea73b7715cd11aa1c9d3b7.bindTooltip(
+    function(layer){
+    let div = L.DomUtil.create('div');
+    
+    let handleObject = feature=>typeof(feature)=='object' ? JSON.stringify(feature) : feature;
+    let fields = ["tellus:pointing_angle", "processing:level", "sat:relative_orbit", "start_datetime", "end_datetime", "tellus:name", "tellus:bands", "created", "tellus:can_ordered", "tellus:sat_frame", "tellus:published_datetime", "sat:orbit_state", "eo:cloud_cover", "gsd", "updated"];
+    let aliases = ["tellus:pointing_angle", "processing:level", "sat:relative_orbit", "start_datetime", "end_datetime", "tellus:name", "tellus:bands", "created", "tellus:can_ordered", "tellus:sat_frame", "tellus:published_datetime", "sat:orbit_state", "eo:cloud_cover", "gsd", "updated"];
+    let table = '<table>' +
+        String(
+        fields.map(
+        (v,i)=>
+        `<tr>
+            <th>${aliases[i]}</th>
+            
+            <td>${handleObject(layer.feature.properties[v])}</td>
+        </tr>`).join(''))
+    +'</table>';
+    div.innerHTML=table;
+    
+    return div
+    }
+    ,{"className": "foliumtooltip", "sticky": true});
+                     
+    
+            geo_json_9eb655e320ea73b7715cd11aa1c9d3b7.addTo(map_e56fb91e74b2e89be72df50bf09e1584);
+        
+    
+            var rectangle_9ee423b2068e2fae3a35db081dc32db4 = L.rectangle(
+                [[35.94732097288477, 139.99579849510462], [36.23682702704582, 140.1731604148215]],
+                {"bubblingMouseEvents": true, "color": "#3388ff", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#3388ff", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_e56fb91e74b2e89be72df50bf09e1584);
+        
+</script>
+</html>

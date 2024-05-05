@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_4f66c9c1fd49b97bf55318b6dc4e53a2 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+        
+    
+                    <style>
+                        .foliumtooltip {
+                            
+                        }
+                       .foliumtooltip table{
+                            margin: auto;
+                        }
+                        .foliumtooltip tr{
+                            text-align: left;
+                        }
+                        .foliumtooltip th{
+                            padding: 2px; padding-right: 8px;
+                        }
+                    </style>
+            
+    
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script>$( function() {
+        $( ".maplegend" ).draggable({
+            start: function (event, ui) {
+                $(this).css({
+                    right: "auto",
+                    top: "auto",
+                    bottom: "auto"
+                });
+            }
+        });
+    });
+    </script>
+    <style type='text/css'>
+      .maplegend {
+        position: absolute;
+        z-index:9999;
+        background-color: rgba(255, 255, 255, .8);
+        border-radius: 5px;
+        box-shadow: 0 0 15px rgba(0,0,0,0.2);
+        padding: 10px;
+        font: 12px/14px Arial, Helvetica, sans-serif;
+        right: 10px;
+        bottom: 20px;
+      }
+      .maplegend .legend-title {
+        text-align: left;
+        margin-bottom: 5px;
+        font-weight: bold;
+        }
+      .maplegend .legend-scale ul {
+        margin: 0;
+        margin-bottom: 0px;
+        padding: 0;
+        float: left;
+        list-style: none;
+        }
+      .maplegend .legend-scale ul li {
+        list-style: none;
+        margin-left: 0;
+        line-height: 16px;
+        margin-bottom: 2px;
+        }
+      .maplegend ul.legend-labels li span {
+        display: block;
+        float: left;
+        height: 14px;
+        width: 14px;
+        margin-right: 5px;
+        margin-left: 0;
+        border: 0px solid #ccc;
+        }
+      .maplegend .legend-source {
+        color: #777;
+        clear: both;
+        }
+      .maplegend a {
+        color: #777;
+        }
+    </style>
+    
+</head>
+<body>
+    
+    
+    <div id='maplegend tellus:name' class='maplegend'>
+        <div class='legend-title'>tellus:name</div>
+        <div class='legend-scale'>
+            <ul class='legend-labels'>
+                <li><span style='background:#1f77b4'></span>ALAV2A276862930</li>
+                <li><span style='background:#9edae5'></span>ALAV2A277592930</li>
+            </ul>
+        </div>
+    </div>
+    
+    
+            <div class="folium-map" id="map_4f66c9c1fd49b97bf55318b6dc4e53a2" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_4f66c9c1fd49b97bf55318b6dc4e53a2 = L.map(
+                "map_4f66c9c1fd49b97bf55318b6dc4e53a2",
+                {
+                    center: [33.038165649999996, 131.14601925],
+                    crs: L.CRS.EPSG3857,
+                    zoom: 10,
+                    zoomControl: true,
+                    preferCanvas: false,
+                }
+            );
+            L.control.scale().addTo(map_4f66c9c1fd49b97bf55318b6dc4e53a2);
+
+            
+
+        
+    
+            var tile_layer_dac617c1529a94341aa51631b6d64c12 = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {"attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors", "detectRetina": false, "maxNativeZoom": 19, "maxZoom": 19, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            );
+        
+    
+            tile_layer_dac617c1529a94341aa51631b6d64c12.addTo(map_4f66c9c1fd49b97bf55318b6dc4e53a2);
+        
+    
+            map_4f66c9c1fd49b97bf55318b6dc4e53a2.fitBounds(
+                [[32.5014795, 130.5258587], [33.5748518, 131.7661798]],
+                {}
+            );
+        
+    
+        function geo_json_df39d25d984c0158f79b96cd1b5d9a58_styler(feature) {
+            switch(feature.id) {
+                case "0": 
+                    return {"color": "#1f77b4", "fillColor": "#1f77b4", "fillOpacity": 0.5, "weight": 2};
+                default:
+                    return {"color": "#9edae5", "fillColor": "#9edae5", "fillOpacity": 0.5, "weight": 2};
+            }
+        }
+        function geo_json_df39d25d984c0158f79b96cd1b5d9a58_highlighter(feature) {
+            switch(feature.id) {
+                default:
+                    return {"fillOpacity": 0.75};
+            }
+        }
+        function geo_json_df39d25d984c0158f79b96cd1b5d9a58_pointToLayer(feature, latlng) {
+            var opts = {"bubblingMouseEvents": true, "color": "#3388ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#3388ff", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3};
+            
+            let style = geo_json_df39d25d984c0158f79b96cd1b5d9a58_styler(feature)
+            Object.assign(opts, style)
+            
+            return new L.CircleMarker(latlng, opts)
+        }
+
+        function geo_json_df39d25d984c0158f79b96cd1b5d9a58_onEachFeature(feature, layer) {
+            layer.on({
+                mouseout: function(e) {
+                    if(typeof e.target.setStyle === "function"){
+                            geo_json_df39d25d984c0158f79b96cd1b5d9a58.resetStyle(e.target);
+                    }
+                },
+                mouseover: function(e) {
+                    if(typeof e.target.setStyle === "function"){
+                        const highlightStyle = geo_json_df39d25d984c0158f79b96cd1b5d9a58_highlighter(e.target.feature)
+                        e.target.setStyle(highlightStyle);
+                    }
+                },
+            });
+        };
+        var geo_json_df39d25d984c0158f79b96cd1b5d9a58 = L.geoJson(null, {
+                onEachFeature: geo_json_df39d25d984c0158f79b96cd1b5d9a58_onEachFeature,
+            
+                style: geo_json_df39d25d984c0158f79b96cd1b5d9a58_styler,
+                pointToLayer: geo_json_df39d25d984c0158f79b96cd1b5d9a58_pointToLayer,
+        });
+
+        function geo_json_df39d25d984c0158f79b96cd1b5d9a58_add (data) {
+            geo_json_df39d25d984c0158f79b96cd1b5d9a58
+                .addData(data);
+        }
+            geo_json_df39d25d984c0158f79b96cd1b5d9a58_add({"bbox": [130.5258587, 32.5014795, 131.7661798, 33.5748518], "features": [{"bbox": [130.5258587, 32.7261574, 131.4728665, 33.5748518], "geometry": {"coordinates": [[[130.5258587, 32.8711041], [131.2785533, 32.7261574], [131.4728665, 33.4285421], [130.7145808, 33.5748518], [130.5258587, 32.8711041]]], "type": "Polygon"}, "id": "0", "properties": {"__folium_color": "#1f77b4", "created": "2021-09-22T04:22:41.852416+00:00", "end_datetime": "2011-04-06T02:02:39.761413+00:00", "eo:cloud_cover": 1.0, "gsd": 10.0, "processing:level": "L1B1", "sat:orbit_state": "descending", "sat:relative_orbit": 83, "start_datetime": "2011-04-06T02:02:39.761413+00:00", "tellus:bands": ["band1", "band2", "band3", "band4"], "tellus:can_ordered": true, "tellus:name": "ALAV2A276862930", "tellus:pointing_angle": 0.0, "tellus:published_datetime": "2021-09-22T04:23:12.260609+00:00", "tellus:sat_frame": 2930, "updated": "2024-03-20T20:54:30.346266+00:00"}, "type": "Feature"}, {"bbox": [130.7546548, 32.5014795, 131.7661798, 33.369854], "geometry": {"coordinates": [[[130.7546548, 32.6689906], [131.5577057, 32.5014795], [131.7661798, 33.2007751], [130.9573237, 33.369854], [130.7546548, 32.6689906]]], "type": "Polygon"}, "id": "1", "properties": {"__folium_color": "#9edae5", "created": "2021-09-22T03:58:43.261465+00:00", "end_datetime": "2011-04-11T02:08:55.349867+00:00", "eo:cloud_cover": 15.5, "gsd": 10.0, "processing:level": "L1B1", "sat:orbit_state": "descending", "sat:relative_orbit": 86, "start_datetime": "2011-04-11T02:08:55.349867+00:00", "tellus:bands": ["band1", "band2", "band3", "band4"], "tellus:can_ordered": true, "tellus:name": "ALAV2A277592930", "tellus:pointing_angle": 14.0, "tellus:published_datetime": "2021-09-22T03:59:13.868647+00:00", "tellus:sat_frame": 2930, "updated": "2024-03-20T21:52:10.361727+00:00"}, "type": "Feature"}], "type": "FeatureCollection"});
+
+        
+    
+    geo_json_df39d25d984c0158f79b96cd1b5d9a58.bindTooltip(
+    function(layer){
+    let div = L.DomUtil.create('div');
+    
+    let handleObject = feature=>typeof(feature)=='object' ? JSON.stringify(feature) : feature;
+    let fields = ["tellus:pointing_angle", "processing:level", "sat:relative_orbit", "start_datetime", "end_datetime", "tellus:name", "tellus:bands", "created", "tellus:can_ordered", "tellus:sat_frame", "tellus:published_datetime", "sat:orbit_state", "eo:cloud_cover", "gsd", "updated"];
+    let aliases = ["tellus:pointing_angle", "processing:level", "sat:relative_orbit", "start_datetime", "end_datetime", "tellus:name", "tellus:bands", "created", "tellus:can_ordered", "tellus:sat_frame", "tellus:published_datetime", "sat:orbit_state", "eo:cloud_cover", "gsd", "updated"];
+    let table = '<table>' +
+        String(
+        fields.map(
+        (v,i)=>
+        `<tr>
+            <th>${aliases[i]}</th>
+            
+            <td>${handleObject(layer.feature.properties[v])}</td>
+        </tr>`).join(''))
+    +'</table>';
+    div.innerHTML=table;
+    
+    return div
+    }
+    ,{"className": "foliumtooltip", "sticky": true});
+                     
+    
+            geo_json_df39d25d984c0158f79b96cd1b5d9a58.addTo(map_4f66c9c1fd49b97bf55318b6dc4e53a2);
+        
+    
+            var rectangle_914f4d1bae3d639def6d406b2c44fb2f = L.rectangle(
+                [[33.10397696446552, 130.51733966299525], [33.306572739340595, 130.88749662866667]],
+                {"bubblingMouseEvents": true, "color": "#3388ff", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#3388ff", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_4f66c9c1fd49b97bf55318b6dc4e53a2);
+        
+</script>
+</html>
