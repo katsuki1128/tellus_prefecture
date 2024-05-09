@@ -1,3 +1,4 @@
+<!-- index.html -->
 <!DOCTYPE html>
 <html lang="ja">
 
@@ -40,7 +41,8 @@
 
 
             <!-- <label for="city_name"></label> -->
-            <select id="city_name" name="city_name" data-selected-city="{{ selected_city }}" required>
+            <select id="city_name" name="city_name" data-selected-city="{{ selected_city }}" required
+                onchange="updateCity()">
                 <option value="">市区町村</option>
                 {% for name in city_names %}
                 <option value="{{ name }}" {% if name==selected_city %}selected{% endif %}>
@@ -50,7 +52,7 @@
             </select>
 
 
-            <button type="submit" name="action" value="get_map">選択</button>
+            <!-- <button type="submit" name="action" value="get_map">選択</button> -->
         </div>
         <div>
             <label for="tellus_name">地図範囲を選択:</label>

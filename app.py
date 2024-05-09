@@ -13,17 +13,6 @@ app = Flask(__name__)
 
 tellus_traveler.api_token = "FgIaEvBKbokfCq1JMFFNslFDxBRdYwiI"
 
-# GeoJSON ファイルから市町村名を取得
-# prefecuture_gdf = gpd.read_file(
-#     "/vsizip//vsicurl/https://nlftp.mlit.go.jp/ksj/gml/data/N03/N03-2023/N03-20230101_08_GML.zip/N03-23_08_230101.geojson"
-# "/vsizip//vsicurl/https://nlftp.mlit.go.jp/ksj/gml/data/N03/N03-2023/N03-20230101_40_GML.zip/N03-23_40_230101.geojson"
-# f"/vsizip//vsicurl/https://nlftp.mlit.go.jp/ksj/gml/data/N03/N03-2023/N03-20230101_{selected_prefecture}_GML.zip/N03-23_{selected_prefecture}_230101.geojson"
-# )
-# city_names = sorted(prefecuture_gdf["N03_004"].unique())
-# pprint.pprint(city_names)
-
-# city_names = []
-
 # 都道府県コードと名称の辞書
 pref_codes = {
     "01": "北海道",
@@ -94,24 +83,6 @@ def update_city_names(selected_prefecture):
     return city_names, prefecture_gdf
 
 
-# AVNIR-2 データセットの取得
-datasets = tellus_traveler.datasets()
-avnir2_dataset = next(dataset for dataset in datasets if "AVNIR-2" in dataset["name"])
-
-
-# @app.route("/update_prefecture/<pref_code>")
-# def update_prefecture(pref_code):
-#     try:
-#         prefecture_gdf = gpd.read_file(
-#             f"/vsizip//vsicurl/https://nlftp.mlit.go.jp/ksj/gml/data/N03/N03-2023/N03-20230101_{pref_code}_GML.zip/N03-23_{pref_code}_230101.geojson"
-#         )
-#         city_names = sorted(prefecture_gdf["N03_004"].unique())
-#         pprint.pprint(city_names)
-#         return jsonify({"city_names": city_names})
-#     except Exception as e:
-#         return jsonify({"error": str(e)})
-
-
 @app.route("/update_prefecture/<pref_code>")
 def update_prefecture(pref_code):
     city_names, prefecture_gdf = get_city_names(pref_code)
@@ -122,6 +93,11 @@ def update_prefecture(pref_code):
         return jsonify(
             {"error": f"Could not retrieve cities for prefecture {pref_code}"}
         )
+
+
+# AVNIR-2 データセットの取得
+datasets = tellus_traveler.datasets()
+avnir2_dataset = next(dataset for dataset in datasets if "AVNIR-2" in dataset["name"])
 
 
 @app.route("/", methods=["GET", "POST"])
